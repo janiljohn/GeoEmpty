@@ -78,8 +78,13 @@ public class MainActivity extends AppCompatActivity {
         mPrevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                index = --index % questions.length;
-                updateQuestion();
+                if(index == 0){
+                    index = 6;
+                    index--;
+                } else{
+                    index = --index % questions.length;
+                    updateQuestion();
+                }
             }
         });
 
